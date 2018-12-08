@@ -33,7 +33,7 @@
     </style>
 </head>
 <body>
-<h1>User Information</h1>
+<h1>Patients Information</h1>
 <table>
     <tr>
         <th>ID</th>
@@ -52,6 +52,5 @@
         </tr>
     </s:iterator>
 </table>
-<h2>Sales</h2>
 </body>
 </html>

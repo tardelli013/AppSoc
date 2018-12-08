@@ -18,8 +18,8 @@ public class PatientRest {
 
     @ApiOperation(value = "Pacientes",
             position = 1,
-            notes = "Retorna os pacientes cadastrados ")
-    @GetMapping(value = "/api/patient",
+            notes = "Retorna todos os pacientes cadastrados ")
+    @GetMapping(value = "/api/patients",
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public List<Patient> getPatients() {
         return patientService.retrievePatients();
