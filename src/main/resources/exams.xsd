@@ -1,0 +1,34 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tardelli.soc.com.br/examws"
+           targetNamespace="http://tardelli.soc.com.br/examws" elementFormDefault="qualified">
+
+    <xs:element name="getExamsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getExamsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="exam" type="tns:exam"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="exam">
+        <xs:sequence>
+            <xs:element name="examId" type="xs:int"/>
+            <xs:element name="patientId" type="xs:int"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="age" type="xs:string"/>
+            <xs:element name="gender" type="xs:string"/>
+            <xs:element name="examTypeId" type="xs:int"/>
+            <xs:element name="examType" type="xs:string"/>
+            <xs:element name="crmRequester" type="xs:string"/>
+            <xs:element name="examinationDate" type="xs:date"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

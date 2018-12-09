@@ -15,6 +15,8 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 
+import javax.xml.ws.Endpoint;
+
 @SpringBootApplication
 public class StarterSocApp extends SpringBootServletInitializer implements ApplicationRunner {
     private static final Logger log = LoggerFactory.getLogger(StarterSocApp.class);
@@ -33,6 +35,7 @@ public class StarterSocApp extends SpringBootServletInitializer implements Appli
         SpringApplication.run(StarterSocApp.class, args);
         log.info("Started application at {}", "http://localhost:8080/home");
         log.info("Started Swagger at {}", "http://localhost:8080/swagger-ui.html");
+        log.info("Started WebService SOAP at {}", "http://localhost:8080/ws/exams.wsdl");
     }
 
     @Bean

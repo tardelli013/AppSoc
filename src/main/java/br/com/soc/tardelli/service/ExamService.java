@@ -27,4 +27,7 @@ public class ExamService {
         return exams;
     }
 
+    public Exam findById(int id) {
+        return examDAO.getExams().get(0);
+    }
 }
