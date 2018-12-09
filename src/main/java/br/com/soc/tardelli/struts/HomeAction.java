@@ -17,6 +17,7 @@ public class HomeAction extends ActionSupport {
 
     private static final long serialVersionUID = 1L;
     private List<Patient> patients;
+    private String testando = "testandoooooooo";
 
     @Autowired
     private PatientService patientService;
@@ -31,5 +32,9 @@ public class HomeAction extends ActionSupport {
 
     public List<Patient> getPatients() {
         return patients;
+    }
+
+    public String getTestando() {
+        return testando;
     }
 }

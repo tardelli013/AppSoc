@@ -1,5 +1,6 @@
 package br.com.soc.tardelli;
 
+import br.com.soc.tardelli.service.ExamService;
 import br.com.soc.tardelli.service.PatientService;
 import org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter;
 import org.slf4j.Logger;
@@ -20,6 +21,8 @@ public class StarterSocApp extends SpringBootServletInitializer implements Appli
 
     @Autowired
     private PatientService patientService;
+    @Autowired
+    private ExamService examService;
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
@@ -44,6 +47,7 @@ public class StarterSocApp extends SpringBootServletInitializer implements Appli
     @Override
     public void run(ApplicationArguments args) {
         patientService.putPatients();
+        examService.putExams();
     }
 
 }

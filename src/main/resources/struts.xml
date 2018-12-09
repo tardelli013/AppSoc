@@ -3,6 +3,7 @@
 <struts>
 
   <constant name="struts.devMode" value="true"/>
+  <constant name="struts.ui.theme" value="bootstrap" />
   <constant name="struts.objectFactory" value="spring"/>
   <constant name="struts.action.excludePattern" value="/swagger-resources/configuration/security*,/swagger-resources*,/swagger-resources/configuration/ui*,/v2/.*,/api/.*,/"/>
   <!--makes struts2-convention-plugin work in embedded jar-->

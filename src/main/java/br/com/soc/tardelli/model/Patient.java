@@ -7,9 +7,7 @@ public class Patient {
     private String age;
     private String gender;
 
-    public Patient(Integer id, String firstName, String lastName, String age,
-                   String gender) {
-        super();
+    public Patient(Integer id, String firstName, String lastName, String age, String gender) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

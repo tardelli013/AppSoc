@@ -63,6 +63,8 @@
     <orderEntry type="library" name="Maven: org.reflections:reflections:0.9.11" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:20.0" level="project" />
     <orderEntry type="library" name="Maven: org.javassist:javassist:3.21.0-GA" level="project" />
+    <orderEntry type="library" name="Maven: com.jgeppert.struts2.bootstrap:struts2-bootstrap-plugin:2.5.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.struts:struts-annotations:1.0.6" level="project" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-swagger2:2.7.0" level="project" />
     <orderEntry type="library" name="Maven: io.swagger:swagger-annotations:1.5.13" level="project" />
     <orderEntry type="library" name="Maven: io.swagger:swagger-models:1.5.13" level="project" />
