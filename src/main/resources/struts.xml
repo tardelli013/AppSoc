@@ -5,7 +5,7 @@
   <constant name="struts.devMode" value="true"/>
   <constant name="struts.ui.theme" value="bootstrap" />
   <constant name="struts.objectFactory" value="spring"/>
-  <constant name="struts.action.excludePattern" value="/ws/exams.wsdl,/swagger-resources/configuration/security*,/swagger-resources*,/swagger-resources/configuration/ui*,/v2/.*,/api/.*,/"/>
+  <constant name="struts.action.excludePattern" value="/ws*,/ws/exams.wsdl,/swagger-resources/configuration/security*,/swagger-resources*,/swagger-resources/configuration/ui*,/v2/.*,/api/.*,/"/>
   <!--makes struts2-convention-plugin work in embedded jar-->
   <constant name="struts.convention.exclude.parentClassLoader" value="false"/>
   <constant name="struts.mapper.action.prefix.enabled" value="true"/>
