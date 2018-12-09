@@ -1,5 +1,6 @@
 package br.com.soc.tardelli.ws;
 
+import br.com.soc.tardelli.Utils.MapperUtils;
 import br.com.soc.tardelli.examws.GetExamsRequest;
 import br.com.soc.tardelli.examws.GetExamsResponse;
 import br.com.soc.tardelli.model.Exam;
@@ -32,33 +33,8 @@ public class ExamSoapEndpoint {
     public GetExamsResponse getCountry(@RequestPayload GetExamsRequest request) {
         GetExamsResponse response = new GetExamsResponse();
 
-        response.setExam(mapExam(examService.findById(request.getId())));
+        response.setExam(MapperUtils.mapExam(examService.findById(request.getId())));
         return response;
     }
 
-    private br.com.soc.tardelli.examws.Exam mapExam(Exam exam) {
-        br.com.soc.tardelli.examws.Exam newExam = new br.com.soc.tardelli.examws.Exam();
-        newExam.setAge(exam.getPatient().getAge());
-        newExam.setCrmRequester(exam.getCrmRequester());
-        newExam.setExamId(exam.getId());
-
-        GregorianCalendar c = new GregorianCalendar();
-        c.setTime(exam.getExaminationDate());
-        XMLGregorianCalendar date2 = null;
-
-        try {
-            date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
-        } catch (DatatypeConfigurationException e) {
-            e.printStackTrace();
-        }
-
-        newExam.setExaminationDate(date2);
-        newExam.setExamType(exam.getExamType());
-        newExam.setExamTypeId(exam.getExamTypeId());
-        newExam.setName(exam.getPatient().getFirstName() + " " + exam.getPatient().getLastName());
-        newExam.setGender(exam.getPatient().getGender().equalsIgnoreCase("M") ? "Masculino" : "Feminino");
-        newExam.setPatientId(exam.getExamTypeId());
-
-        return newExam;
-    }
 }

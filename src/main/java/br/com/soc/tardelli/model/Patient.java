@@ -15,6 +15,9 @@ public class Patient {
         this.gender = gender;
     }
 
+    public Patient() {
+    }
+
     public Integer getId() {
         return id;
     }

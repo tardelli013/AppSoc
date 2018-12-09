@@ -24,6 +24,9 @@ public class Exam {
         this.patient = new Patient(patientId, firstName, lastName, age, gender);
     }
 
+    public Exam() {
+    }
+
     public Integer getId() {
         return id;
     }
