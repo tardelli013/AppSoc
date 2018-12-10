@@ -43,4 +43,9 @@ public enum ExamTypesEnum {
     public String getCid() {
         return cid;
     }
+
+    @Override
+    public String toString() {
+        return this.id + " - " + this.name + " - " + this.cid;
+    }
 }

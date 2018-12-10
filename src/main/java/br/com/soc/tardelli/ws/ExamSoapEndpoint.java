@@ -3,18 +3,12 @@ package br.com.soc.tardelli.ws;
 import br.com.soc.tardelli.Utils.MapperUtils;
 import br.com.soc.tardelli.examws.GetExamsRequest;
 import br.com.soc.tardelli.examws.GetExamsResponse;
-import br.com.soc.tardelli.model.Exam;
 import br.com.soc.tardelli.service.ExamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
-
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
-import java.util.GregorianCalendar;
 
 @Endpoint
 public class ExamSoapEndpoint {

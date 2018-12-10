@@ -4,115 +4,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Information</title>
+    <title>Soc Exames</title>
 
-    <sb:head/>
-
-    <style>
-        body {
-            font-family: verdana;
-        }
-
-        table {
-            width: 500px;
-
-        }
-
-        table, th, td {
-            border: 1px solid black;
-            padding: 2px;
-        }
-
-        th {
-            background-color: #00439A;
-            color: #FFFFFF;
-        }
-
-        tr.odd {
-            background-color: #CFCFCF;
-        }
-
-        tr.even {
-            background-color: #1076F5;
-        }
-    </style>
+<sb:head/>
 </head>
 <body>
 
-    <s:actionerror theme="bootstrap"/>
-    <s:actionmessage theme="bootstrap"/>
-    <s:fielderror theme="bootstrap"/>
+   <div class="jumbotron text-center">
+     <h1>App Soc Exames</h1>
+   </div>
 
+   <div class="row">
+     <div class="col-sm-1"></div>
+     <div class="col-sm-9">
+        <s:form theme="bootstrap"
+        action="saveExam"
+        cssClass="well form-vertical" label="Adicionar exame">
 
-    <s:form action="index" enctype="multipart/form-data" theme="bootstrap" cssClass="form-horizontal"
-            label="A sample horizontal Form">
-        <s:textfield
-                label="Name"
-                name="name"
-                tooltip="Enter your Name here"/>
-
-        <s:textfield
-                label="Textfield with Error"
-                name="error"/>
-
-        <s:textarea
-                tooltip="Enter your Biography"
-                label="Biography"
-                name="bio"
-                cols="20"
-                rows="3"/>
-
-        <s:select
-                tooltip="Choose Your Favourite Color"
-                label="Favorite Color"
-                list="{'Red', 'Blue', 'Green'}"
-                name="favouriteColor"
+             <s:select
+                tooltip="Paciente"
+                label="Paciente"
+                list="patients"
+                name="patientId"
                 emptyOption="true"
-                headerKey="None"
-                headerValue="None"/>
+                headerKey="Paciente"
+                headerValue="Paciente"/>
 
-        <s:checkboxlist
-                tooltip="Choose your Friends"
-                label="Friends"
-                list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
-                name="friends"/>
+             <s:select
+                 tooltip="Tipo Exame"
+                 label="Tipo Exame"
+                 list="examTypes"
+                 name="examTypesId"
+                 emptyOption="true"
+                 headerKey="Tipo Exame"
+                 headerValue="Tipo Exame"/>
 
-        <s:radio
-                tooltip="Choose your Best Friend"
-                label="Best Friend"
-                list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
-                name="bestFriend"
-                cssErrorClass="foo"/>
-
-        <s:checkbox
-                tooltip="Confirmed that your are Over 18"
-                label="Age 18+"
-                name="legalAge"/>
-
-        <s:submit cssClass="btn"/>
-    </s:form>
+             <s:textfield
+                 label="CRM Medico"
+                 name="crm"
+                 tooltip="Medico requisitante"/>
 
 
-<h1>Patients Information</h1>
+               <s:submit cssClass="btn btn-primary" />
+           </s:form>
+     </div>
+     <div class="col-sm-1"></div>
+   </div>
 
-<table>
-    <tr>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Age</th>
-        <th>Gender</th>
-    </tr>
-    <s:iterator value="patients">
-        <tr class="<s:if test="id%2==0">even</s:if><s:else>odd</s:else>">
-            <td align="center"><s:property value="id"/></td>
-            <td><s:property value="firstName"/></td>
-            <td><s:property value="lastName"/></td>
-            <td align="center"><s:property value="age"/></td>
-            <td><s:if test="gender.equals(\"M\")">Male</s:if><s:else>Female</s:else></td>
-        </tr>
-    </s:iterator>
-</table>
+   <div class="row">
+     <div class="col-sm-1"></div>
+     <div class="col-sm-9">
+        <s:form  enctype="multipart/form-data" theme="bootstrap"
+                cssClass="well form-vertical" label="Exames cadastrados">
+
+        <table class="table table-striped">
+            <tr>
+                <th>#</th>
+                <th>Exame</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>CRM Medico</th>
+                <th>Data Exame</th>
+                <th>Idade</th>
+                <th>Sexo</th>
+            </tr>
+            <s:iterator value="exams">
+                <tr class="<s:if test="id%2==0">even</s:if><s:else>odd</s:else>">
+                    <td><s:property value="id"/></td>
+                    <td><s:property value="examType"/></td>
+                    <td><s:property value="patient.firstName"/></td>
+                    <td><s:property value="patient.lastName"/></td>
+                    <td><s:property value="crmRequester"/></td>
+                    <td><s:property value="examinationDate"/></td>
+                    <td><s:property value="patient.age"/></td>
+                    <td><s:if test="patient.gender.equals(\"M\")">Masc</s:if><s:else>Fem</s:else></td>
+                </tr>
+            </s:iterator>
+        </table>
+
+        </s:form>
+
+     </div>
+     <div class="col-sm-1"></div>
+   </div>
+
 
 
 </body>

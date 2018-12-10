@@ -100,12 +100,10 @@ public class PatientDAO {
     }
 
     public Patient insert(Patient patient) {
-        StringBuilder query = new StringBuilder();
-        query.append("INSERT INTO patients(first_name, last_name, age, gender) VALUES (?,?,?,?)");
 
         Object[] objects = {patient.getFirstName(), patient.getLastName(), patient.getAge(), patient.getGender()};
 
-        jdbcTemplate.update(query.toString(), objects);
+        jdbcTemplate.update("INSERT INTO patients(first_name, last_name, age, gender) VALUES (?,?,?,?)", objects);
 
         return patient;
     }
