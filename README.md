@@ -29,3 +29,5 @@ Swagger com documentação da API Rest e exemplos de requisições - http://loca
 
 WSDL do WebService SOAP - http://localhost:8080/ws/exams.wsdl
 
+Existe um exemplo de consumer para este Serviço SOAP no repositório a seguir:
+https://github.com/tardelli13/AppSocConsumer
