@@ -48,11 +48,11 @@ public class HomeAction extends ActionSupport {
     public String saveExam() {
         Exam exam = new Exam();
 
-        String patientId = getPatientId().substring(0,1);
-        String examTypeId = getExamTypesId().substring(0,1);
+        String patientId = getPatientId().substring(0,2);
+        String examTypeId = getExamTypesId().substring(0,2);
 
-        exam.setPatientId(Integer.valueOf(patientId));
-        exam.setExamTypeId(Integer.valueOf(examTypeId));
+        exam.setPatientId(Integer.valueOf(patientId.trim()));
+        exam.setExamTypeId(Integer.valueOf(examTypeId.trim()));
         exam.setCrmRequester(getCrm());
 
         examService.insertExam(exam);

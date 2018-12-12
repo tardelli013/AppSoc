@@ -30,9 +30,8 @@ public class PatientDAO {
         patients.add("Lara Moura 1 F".split(" "));
         patients.add("Debora Moura 29 F".split(" "));
         patients.add("João Silva 20 M".split(" "));
-        patients.add("Ronlado Nazário 19 M".split(" "));
+        patients.add("Ronaldo Nazário 19 M".split(" "));
         patients.add("Ana Santos 19 F".split(" "));
-        patients.add("Bruna Nune 15 F".split(" "));
         patients.add("Alex Alves 40 M".split(" "));
         patients.add("Ceasar Rodrigues 39 M".split(" "));
         patients.add("Paula Soares 22 F".split(" "));

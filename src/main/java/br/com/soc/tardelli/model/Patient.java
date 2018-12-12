@@ -40,6 +40,6 @@ public class Patient {
 
     @Override
     public String toString() {
-        return getId() + "-" +    getFirstName() + " " + getLastName();
+        return getId() + " - " +    getFirstName() + " " + getLastName();
     }
 }
